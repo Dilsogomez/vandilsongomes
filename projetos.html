@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Projetos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Configuração geral */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ff7300, 0 0 20px #ff8800;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Container dos projetos */
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: skewX(-30deg);
+            transition: 0.5s;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            margin: 15px 0;
+        }
+
+        .project-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00ffcc;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card a:hover {
+            background: white;
+            color: #00ffcc;
+        }
+
+        /* Efeito decorativo no fundo */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.15) 0%, transparent 80%);
+            animation: pulse 5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Título e descrição -->
+    <h1>Meus Projetos</h1>
+    <p>Confira alguns dos trabalhos que desenvolvi!</p>
+
+    <!-- Container dos projetos -->
+    <div class="project-container">
+        <!-- Card do projeto 1 -->
+        <div class="project-card">
+            <h3>Jogo de Digitação</h3>
+            <p>Um jogo interativo para melhorar suas habilidades de digitação com frases de filmes da Marvel.</p>
+            <a href="digitation-game.html" target="_blank">Ver Projeto</a>
+        </div>
+        
+        <!-- Card do projeto 2 -->
+        <div class="project-card">
+            <h3>Site de Portfólio</h3>
+            <p>Um site moderno para exibir habilidades, projetos e contato profissional.</p>
+            <a href="portfolio.html" target="_blank">Ver Projeto</a>
+        </div>
+        
+        <!-- Card do projeto 3 -->
+        <div class="project-card">
+            <h3>Calculadora de Investimentos</h3>
+            <p>Ferramenta simples para simular rendimentos em diferentes modalidades de investimento.</p>
+            <a href="investment-calculator.html" target="_blank">Ver Projeto</a>
+        </div>
+        
+        <!-- Card do projeto 4 -->
+        <div class="project-card">
+            <h3>Simulador de Computação Quântica</h3>
+            <p>Uma visualização interativa para explicar conceitos básicos de computação quântica.</p>
+            <a href="quantum-simulator.html" target="_blank">Ver Projeto</a>
+        </div>
+    </div>
+
+    <!-- Animação de fundo -->
+    <div class="background-animation"></div>
+</body>
+</html>

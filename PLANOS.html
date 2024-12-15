@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha seu Plano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Estilo Geral */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 10px #ffdf00, 0 0 20px #ffdf00;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Container dos Planos */
+        .plan-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .plan-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .plan-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .plan-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+
+        .plan-card:hover::before {
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+        }
+
+        .plan-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #ffdf00;
+        }
+
+        .plan-card p {
+            font-size: 1rem;
+            margin: 15px 0;
+        }
+
+        .plan-card .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #ffdf00;
+        }
+
+        .plan-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ffdf00;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .plan-card a:hover {
+            background: white;
+            color: #ffdf00;
+        }
+
+        /* Frame animado no fundo */
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                135deg,
+                rgba(255, 223, 0, 0.05),
+                rgba(255, 223, 0, 0.05) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            z-index: -1;
+            animation: moveFrame 6s linear infinite;
+        }
+
+        @keyframes moveFrame {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100px 100px;
+            }
+        }
+
+         /* Botão do WhatsApp */
+         .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1000;
+            
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-button i {
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Título e Descrição -->
+    <h1>Escolha seu Plano</h1>
+    <p>Selecione o plano que mais combina com você e aproveite nossas vantagens exclusivas!</p>
+
+    <!-- Container dos Planos -->
+    <div class="plan-container">
+        <!-- Plano Bronze -->
+        <div class="plan-card">
+            <h3>Plano Bronze</h3>
+            <p>Ideal para quem está começando. Inclui acesso básico e suporte essencial.</p>
+            <p class="price">R$ 19,90/mês</p>
+            <a href="#bronze">Escolher Bronze</a>
+        </div>
+
+        <!-- Plano Prata -->
+        <div class="plan-card">
+            <h3>Plano Prata</h3>
+            <p>Para quem quer mais recursos e suporte avançado.</p>
+            <p class="price">R$ 49,90/mês</p>
+            <a href="#prata">Escolher Prata</a>
+        </div>
+
+        <!-- Plano Ouro -->
+        <div class="plan-card">
+            <h3>Plano Ouro</h3>
+            <p>Experiência premium com todos os benefícios incluídos.</p>
+            <p class="price">R$ 99,90/mês</p>
+            <a href="#ouro">Escolher Ouro</a>
+        </div>
+        <div>
+                <!-- Botão do WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=5511994502134&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20planos!" 
+    target="_blank" 
+    class="whatsapp-button">
+    <i class="fab fa-whatsapp"></i>
+</a>
+        </div>
+    </div>
+
+    <!-- Frame Animado -->
+    <div class="frame"></div>
+</body>
+</html>
